@@ -112,45 +112,66 @@
         }
 
         /* 扫码登录 */
-        .login_main_box_scan:hover{
-           /* color: rgb(225, 59, 65); */
+        .scan_imgs{
+            width: 100%;
+            height: 150px;
+
+        }
+        .login_main_box_scan:hover,.login_main_box_tra:hover{
+           color: rgb(225, 59, 65);
            cursor: pointer;
         }
+
         .login_main_box_scan,.login_main_box_tra{
             position: relative;
             bottom: -10px;
         }
 
-        .box_main_scan>img{
+        .scan_imgs>img:nth-of-type(2){
             /* margin: 0 100px auto; */
             position: relative;
-            left: 100px;
+            /* left: 25px; */
+            left: 95px;
             border: 1px solid rgb(244, 244, 244);
             padding: 5px;
             border-radius: 5px;
+            transition: all .5s;
         }
+        .scan_imgs>img:nth-of-type(1){
+            position: absolute;
+            right: 130px;
+            top: 300px;
+        }
+
         .box_main_scan>p{
             text-align: center;
         }
         .box_main_scan{
-            display: flex;
+            display: inline-block;
             justify-content: center;
+            width: 100%;
+            height: 260px;
+            /* border: 1px solid red; */
+        }
+        .main_wri{
+            width: 300px;
+            height: 50px;
+            /* border: 1px solid red; */
         }
         .main_wri>img{
-            display: inline-block;
             margin: 0 20px;
             position: relative;
-            left: -6px;
+            left: 40px;
+            /* top: 100px; */
         }
         .main_qui{
             display: flex;
             /* justify-content: center; */
         }
         .main_qui>h6{
-            margin: 5px 20px;
+            margin: -43px 38px;
             position: absolute;
             font-size: 13px;
-
         }
         .main_qui>h6:nth-of-type(1){
             position: absolute;
@@ -158,11 +179,11 @@
         }
         .main_qui>h6:nth-of-type(2){
             position: absolute;
-            right: 210px;
+            right: 212px;
         }
         .main_qui>h6:nth-of-type(3){
             position: absolute;
-            right: 128px;
+            right: 125px;
         }
 
         /* 账户登录 */
@@ -291,8 +312,11 @@
                 <div class="login_main_box_tra">账户登录</div>
             </section>
 
-            <section class="box_main_scan" style="display:none;">
-                <img src="./images/login/show.png" alt="show">
+            <section class="box_main_scan">
+               <div class="scan_imgs">
+                    <img src="./images/login/scan.png" alt="scan" style="width:125px;height:145px;display: none;">
+                    <img src="./images/login/show.png" alt="show">
+                </div>
                 <p>打开手机京东&#x3000;扫描二维码</p>
                 <div class="main_wri">
                     <img src="./images/login/write.png" alt="填写" style="width:34px;height:31px;">
@@ -306,7 +330,7 @@
                 </div>
             </section>
 
-            <section class="box_main_tra">
+            <section class="box_main_tra" style="display:none;">
                 <form action="/login" method="post">
                     <label for="loginname" class="name-label"></label>
                     <input type="text" name="user" placeholder="邮箱／用户名／已验证手机">
@@ -341,6 +365,30 @@
         <p>关于我们 | 联系我们 | 人才招聘 | 商家入驻 | 广告服务 | 手机京东 | 友情链接 | 销售联盟 | 京东社区 | 京东公益 | English Site</p>
         <p>Copyright © 2004-2018 京东JD.com 版权所有</p>
     </footer>
+    <script src="jquery.js"></script>
+    <script>
+        // 扫码动画
+        // console.log($(".scan_imgs img:eq(0)"));
+        $(".scan_imgs img:eq(1)").mouseover(function(){
+            $(".scan_imgs img:eq(1)").css("left","25px");
+            $(".scan_imgs img:eq(0)").show();
+        }).mouseout(function(){
+            $($(".scan_imgs img:eq(1)")).css("left","95px");
+            $(".scan_imgs img:eq(0)").hide();
+        });
+
+        // 点击扫码登录
+        $(".login_main_box_scan").click(function(){
+            $(".box_main_scan").show();
+            $(".box_main_tra").hide();
+        });
+
+        // 点击账号登录
+        $(".login_main_box_tra").click(function(){
+            $(".box_main_scan").hide();
+            $(".box_main_tra").show();
+        });
+    </script>
 </body>
 
 </html>
