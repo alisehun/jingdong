@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>京东-欢迎登录</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html,body{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background-color: black;
+        }
+        /* 头部横幅设置样式 */
+        header{
+            width: 100%;
+            height: 110px;
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            background-color: white;
+        }
+        p{
+            font-size: 14px;
+            color: rgb(153, 153, 153);
+        }
+        b{
+            font-size: 36px;
+            color: rgb(97, 97, 97)
+        }
+        .header_talk>img{
+            position: absolute;
+            bottom: 14px;
+            /* right: 40px; */
+        }
+        .header_talk>p{
+            line-height: 150px;
+        }
+        .header_logo>img{
+            position: absolute;
+            bottom: 30px;
+        }
+        .header_logo>b{
+            position: relative;
+            top: 50px;
+            left: 180px;
+        }
+        .login_header_attention{
+            background-color: rgb(255, 248, 240);
+            width: 100%;
+            height: 40px;
+            
+            display: flex;
+            justify-content: center;
+            
+        }
+        .login_header_attention>p{
+            display: flex;
+            margin: 10px auto;
+            
+        }
+        .login_header_attention img{
+            display: flex;
+            margin: -1px auto;
+        }
+        /* 主体部分登录框设置样式 */
+        main{
+            width: 100%;
+            height: 500px;
+            background: url(./images/login/back.jpg)no-repeat center;
+            display: flex;
+            justify-content: flex-end;
+            
+        }
+        /* 登录框 */
+        .login_main_box{
+            width: 350px;
+            height: 460px;
+            background-color: white;
+            margin: 10px 100px;
+        }
+
+        .login_main_box_sp{
+            width: 100%;
+            height: 40px;
+            background-color: rgb(255, 248, 240);
+            margin: -10px auto;
+
+        }
+        .login_main_box_sp>p{
+            display: flex;
+            line-height: 40px;
+        }
+        .login_main_box_sp img{
+            margin: 10px 5px auto;
+        }
+        /* 登录 */
+        .box_header{
+            width: 100%;
+            height: 60px;
+            margin: 20px 0 20px 0;
+            display: flex;
+            justify-content: space-around;
+            font-size: 20px;
+            border-bottom: 1px solid rgb(244, 244, 244);
+            
+        }
+
+        /* 扫码登录 */
+        .login_main_box_scan:hover{
+           /* color: rgb(225, 59, 65); */
+           cursor: pointer;
+        }
+        .login_main_box_scan,.login_main_box_tra{
+            position: relative;
+            bottom: -10px;
+        }
+
+        .login_main_box>img{
+            /* margin: 0 100px auto; */
+            position: relative;
+            left: 100px;
+            border: 1px solid rgb(244, 244, 244);
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .login_main_box>p{
+            text-align: center;
+        }
+        .box_main_scan{
+            display: flex;
+            justify-content: center;
+        }
+        .main_wri>img{
+            display: inline-block;
+            margin: 0 20px;
+            position: relative;
+            left: -6px;
+        }
+        .main_qui{
+            display: flex;
+            /* justify-content: center; */
+        }
+        .main_qui>h6{
+            margin: 5px 20px;
+            position: absolute;
+            font-size: 13px;
+
+        }
+        .main_qui>h6:nth-of-type(1){
+            position: absolute;
+            right: 280px;
+        }
+        .main_qui>h6:nth-of-type(2){
+            position: absolute;
+            right: 210px;
+        }
+        .main_qui>h6:nth-of-type(3){
+            position: absolute;
+            right: 128px;
+        }
+        .box_footer{
+            background-color: rgb(252, 252, 252);
+            border-top:  1px solid rgb(244, 244, 244);
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 50px;
+            position: relative;
+            margin: 20px auto;
+        }
+        .footer_left{
+            display:flex;
+            margin: 5px 5px auto;
+             
+        }
+        .footer_left>span{
+            display: flex;
+            margin: 5px 10px auto;
+        }
+        .footer_left>span>h6{
+            position: relative;
+            left: 5px;
+            top: -28px;
+            font-size: 15px;
+        }
+        .footer_right{
+            display:flex;
+            margin: 10px 5px auto;
+             
+        }
+        .footer_right>a{
+            margin: 2px 5px auto;
+            font-size: 15px;
+            text-decoration: none;
+            color: rgb(180, 31, 35);
+        }
+        footer{
+            width: 100%;
+            height: 100px;
+            background-color: white;
+        }
+        footer p{
+            color: rgb(102, 102, 102);
+            text-align: center;
+        }
+        
+
+
+
+
+
+
+
+
+
+       
+    </style>
+</head>
+
+<body>
+    <!-- 登录页面头部横幅 -->
+    <header>
+        <div class="header_logo">
+            <img src="./images/login/logo-201305-b.png" alt="logo">
+            <b>欢迎登录</b>
+        </div>
+        <div class="header_talk">
+            <img src="./images/login/talk.png" alt="talk" style="width:18px;height:14px;">
+            <p>&#x3000;&#x3000;登录页面，问卷调查</p>
+        </div>
+    </header>
+    <div class="login_header_attention">
+       
+        <p> <img src="./images/login/question.png" alt="question" style="width:22px;height:22px;">依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！ 新版《京东隐私政策》已上线，将更有利于保护您的个人隐私。</p>
+    </div>
+
+    <!-- 登录框 -->
+    <main>
+        <div class="login_main_box">
+            <div class="login_main_box_sp">
+                <p><img src="./images/login/question.png" alt="question" style="width:22px;height:22px;">京东不会以任何理由要求您转账汇款，谨防诈骗。</p>
+            </div>
+            <section class="box_header">
+                <div class="login_main_box_scan">扫码登录</div>
+                <div class="login_main_box_tra">账户登录</div>
+            </section>
+            <img src="./images/login/show.png" alt="show">
+            <p>打开手机京东&#x3000;扫描二维码</p>
+            <section class="box_main_scan">
+                <div class="main_wri">
+                    <img src="./images/login/write.png" alt="填写" style="width:34px;height:31px;">
+                    <img src="./images/login/bali.png" alt="闪电" style="width:30px;height:30px;">
+                    <img src="./images/login/save.png" alt="安全" style="width:30px;height:30px;">
+                </div>
+                <div class="main_qui">
+                    <h6>免输入</h6><h6>更快</h6><h6>更安全</h6>
+                </div>
+            </section>
+
+            <section class="box_main_tra" style="display:none;">
+                <form action="/login" method="post">
+                    <input type="text" name="user" placeholder="邮箱／用户名／已验证手机">
+                    <input type="password" name="pwd" placeholder="密码">
+                    <input type="submit" value="登录">
+                </form>
+            </section>
+
+            <section class="box_footer">
+                <div class="footer_left">
+                    <span>
+                        <img src="./images/login/qq.png" alt="QQ" style="width:30px;height:30px;">
+                        <h6>QQ</h6>
+                    </span>
+                    <span>
+                        <img src="./images/login/weixin.png" alt="微信" style="width:30px;height:30px;">
+                        <h6>微信</h6>
+                    </span>
+                </div>
+                <div class="footer_right">
+                    <img src="./images/login/right.png" alt="right" style="width:25px;height:25px;">
+                    <a href="#">立即注册</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <br>
+        <p>关于我们 | 联系我们 | 人才招聘 | 商家入驻 | 广告服务 | 手机京东 | 友情链接 | 销售联盟 | 京东社区 | 京东公益 | English Site</p>
+        <p>Copyright © 2004-2018  京东JD.com 版权所有</p>
+    </footer>
+</body>
+
+</html>
