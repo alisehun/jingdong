@@ -121,7 +121,7 @@
             bottom: -10px;
         }
 
-        .login_main_box>img{
+        .box_main_scan>img{
             /* margin: 0 100px auto; */
             position: relative;
             left: 100px;
@@ -129,7 +129,7 @@
             padding: 5px;
             border-radius: 5px;
         }
-        .login_main_box>p{
+        .box_main_scan>p{
             text-align: center;
         }
         .box_main_scan{
@@ -164,6 +164,54 @@
             position: absolute;
             right: 128px;
         }
+
+        /* 账户登录 */
+        .box_main_tra{
+
+        }
+
+        .box_main_tra input{
+            width: 300px;
+            height: 40px;
+            outline: none;
+            margin: 20px 25px auto;
+            
+        }
+        .box_main_tra input:nth-of-type(1),.box_main_tra input:nth-of-type(2){
+            border: 1px solid rgb(189, 189, 189);
+            padding-left:45px;
+        }
+        .box_main_tra input:nth-of-type(3){
+            background-color: rgb(225, 59, 65);
+            color: white;
+        }
+        .name-label{
+            position: absolute;
+            /* z-index: 3; */
+            top: 315px;
+            right: 386px;
+            display: inline-block;
+            width: 38px;
+            height: 38px;
+            border-right: 1px solid #bdbdbd;
+            background: url("/www/images/login/label.png") no-repeat;
+        }
+        .pwd-label{
+            position: absolute;
+            /* z-index: 3; */
+            top: 375px;
+            right: 386px;
+            display: inline-block;
+            width: 38px;
+            height: 38px;
+            border-right: 1px solid #bdbdbd;
+            background: url("/www/images/login/label.png") no-repeat;
+            background-position: -48px 0;
+        }
+
+
+
+        /* 登录框footer */
         .box_footer{
             background-color: rgb(252, 252, 252);
             border-top:  1px solid rgb(244, 244, 244);
@@ -210,15 +258,6 @@
             text-align: center;
         }
         
-
-
-
-
-
-
-
-
-
        
     </style>
 </head>
@@ -236,8 +275,9 @@
         </div>
     </header>
     <div class="login_header_attention">
-       
-        <p> <img src="./images/login/question.png" alt="question" style="width:22px;height:22px;">依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！ 新版《京东隐私政策》已上线，将更有利于保护您的个人隐私。</p>
+
+        <p> <img src="./images/login/question.png" alt="question" style="width:22px;height:22px;">依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！
+            新版《京东隐私政策》已上线，将更有利于保护您的个人隐私。</p>
     </div>
 
     <!-- 登录框 -->
@@ -250,25 +290,31 @@
                 <div class="login_main_box_scan">扫码登录</div>
                 <div class="login_main_box_tra">账户登录</div>
             </section>
-            <img src="./images/login/show.png" alt="show">
-            <p>打开手机京东&#x3000;扫描二维码</p>
-            <section class="box_main_scan">
+
+            <section class="box_main_scan" style="display:none;">
+                <img src="./images/login/show.png" alt="show">
+                <p>打开手机京东&#x3000;扫描二维码</p>
                 <div class="main_wri">
                     <img src="./images/login/write.png" alt="填写" style="width:34px;height:31px;">
                     <img src="./images/login/bali.png" alt="闪电" style="width:30px;height:30px;">
                     <img src="./images/login/save.png" alt="安全" style="width:30px;height:30px;">
                 </div>
                 <div class="main_qui">
-                    <h6>免输入</h6><h6>更快</h6><h6>更安全</h6>
+                    <h6>免输入</h6>
+                    <h6>更快</h6>
+                    <h6>更安全</h6>
                 </div>
             </section>
 
-            <section class="box_main_tra" style="display:none;">
+            <section class="box_main_tra">
                 <form action="/login" method="post">
+                    <label for="loginname" class="name-label"></label>
                     <input type="text" name="user" placeholder="邮箱／用户名／已验证手机">
+                    <label for="loginpwd" class="pwd-label"></label>
                     <input type="password" name="pwd" placeholder="密码">
                     <input type="submit" value="登录">
                 </form>
+                <div style="width:100px;height:70px;"></div>
             </section>
 
             <section class="box_footer">
@@ -293,7 +339,7 @@
     <footer>
         <br>
         <p>关于我们 | 联系我们 | 人才招聘 | 商家入驻 | 广告服务 | 手机京东 | 友情链接 | 销售联盟 | 京东社区 | 京东公益 | English Site</p>
-        <p>Copyright © 2004-2018  京东JD.com 版权所有</p>
+        <p>Copyright © 2004-2018 京东JD.com 版权所有</p>
     </footer>
 </body>
 
