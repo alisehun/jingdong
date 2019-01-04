@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="./images/login/JD.png" type="image/png">
     <title>京东-欢迎登录</title>
     <style>
         *{
@@ -187,9 +188,6 @@
         }
 
         /* 账户登录 */
-        .box_main_tra{
-
-        }
 
         .box_main_tra input{
             width: 300px;
@@ -215,7 +213,7 @@
             width: 38px;
             height: 38px;
             border-right: 1px solid #bdbdbd;
-            background: url("/www/images/login/label.png") no-repeat;
+            background: url("/images/login/label.png") no-repeat;
         }
         .pwd-label{
             position: absolute;
@@ -226,7 +224,7 @@
             width: 38px;
             height: 38px;
             border-right: 1px solid #bdbdbd;
-            background: url("/www/images/login/label.png") no-repeat;
+            background: url("/images/login/label.png") no-repeat;
             background-position: -48px 0;
         }
 
@@ -269,6 +267,7 @@
             text-decoration: none;
             color: rgb(180, 31, 35);
         }
+        /* footer */
         footer{
             width: 100%;
             height: 100px;
@@ -354,7 +353,7 @@
                 </div>
                 <div class="footer_right">
                     <img src="./images/login/right.png" alt="right" style="width:25px;height:25px;">
-                    <a href="#">立即注册</a>
+                    <a href="index.html">立即注册</a>
                 </div>
             </section>
         </div>
@@ -377,6 +376,12 @@
             $(".scan_imgs img:eq(0)").hide();
         });
 
+        $(".scan_imgs img:eq(0)").mouseover(function(){
+            $(".scan_imgs img:eq(1)").css("left","25px");
+            $(".scan_imgs img:eq(0)").show();
+        });
+
+
         // 点击扫码登录
         $(".login_main_box_scan").click(function(){
             $(".box_main_scan").show();
@@ -388,6 +393,21 @@
             $(".box_main_scan").hide();
             $(".box_main_tra").show();
         });
+
+         // 监听表单提交事件，阻止表单提交，用ajax发送请求
+         $("form").submit(function(e){
+            // 阻止默认事件
+            e.preventDefault();
+            $.post("/login",$(this).serialize(),function(data){
+                    // data.code为0是登录成功
+                    if(!data.code){
+                        // 跳转到首页
+                        location.href = "/";
+                    }
+            });
+        });
+
+
     </script>
 </body>
 

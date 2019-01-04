@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="./images/login/JD.png" type="image/png">
+    <title>京东(JD.COM)-正品低价、品质保障、配送及时、轻松购物！</title>
+    <!-- 引入bootstrap -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html,body{
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        body{
+            background-color: rgb(240, 243, 239);
+        }
+        /* 广告 */
+        .adv{
+            width: 100%;
+            /* height: 80px; */
+            position: relative;
+            display: block;
+        }
+        .adv img{
+            width: 100%;
+        }
+        .adv span{
+            display: block;
+            width: 16px;
+            height: 16px;
+            text-align: center;
+            line-height: 16px;
+            background-color: white;
+            opacity: 0.3;
+            position: absolute;
+            right: 30px;
+            top: 10px; 
+        }
+        /* 横向导航栏 */
+        header{
+            position: relative;
+        }
+        header li{
+            list-style: none;
+            /* float: left; */
+            /* margin: 7px 17px auto; */
+            margin: 7px 5px auto;
+            color: rgb(165, 165, 165);   
+        }
+        header li:hover{
+            cursor: pointer;
+            color: rgb(238, 14, 35);
+        }
+        header li:nth-of-type(1){
+            margin-right:100px;
+        }
+        header li:nth-of-type(10){
+            margin-right: 20px;
+        }
+        header ul{
+            width: 100%;
+            height: 30px;
+            /* margin: 5px auto; */
+            padding-left:200px; 
+            background-color:rgb(226, 226, 226); 
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+           
+        }
+
+        .phone_scan img{
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            right: 15px;
+            top: 30px;
+        }
+        /* 左侧导航栏 */
+        .left_nav{
+            width: 190px;
+            height: 590px;
+            /* border: 1px solid red; */
+            margin: -40px 10px auto;
+        }
+        .jd_image{
+            width: 190px;
+            height: 170px;
+            background: url("./images/index/jd.png") no-repeat;
+            background-size:317.5px 170px;
+        }
+        .jd_image:hover{
+            background: url("./images/index/gou.gif") no-repeat;
+        }
+        nav{
+            background-color: rgb(253, 253, 253);
+            margin: 2px 0 auto;
+        }
+        nav a{
+            width: 100%;
+            text-decoration: none;
+            display: inline-block;
+            color: rgb(98, 98, 98);
+            margin: 3px 0 auto;
+        }
+        nav a:hover{
+            text-decoration: none;
+            cursor: pointer;
+            color: rgb(238, 14, 35);
+            background-color: rgb(200, 200, 200);
+            
+        }
+
+        /* 右侧导航栏 */
+        .nav_right{
+            width: 113px;
+            height: 100%;
+            /* width: 100%; */
+            border-right: 8px solid rgb(122, 110, 110);
+            position: fixed; 
+            bottom: 0px;
+            right: 0px;
+
+        }
+        .n{
+            width: 113px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* float: left; */
+            /* border: 1px solid red; */
+            position: fixed;
+            border-radius: 5px 0 0 5px;
+        }
+        .user{
+            top: 200px;
+        }
+        .buy{
+            top: 236px;
+        }
+        .like{
+            top: 272px;
+        }
+        .time{
+            top: 308px;
+        }
+        .my{
+            top: 344px;
+        }
+        .talk{
+            top: 380px;
+        }
+        .idea{
+            top: 416px;
+        }
+        .top{
+            bottom: 0;
+        }
+        .users_n{
+            width: 35px;
+            height: 35px;
+            background-image: url("./images/index/toolbars.png");
+            background-position: -88px -175px;
+            border-radius: 5px 0 0 5px;
+            background-color: rgb(122, 110, 110);
+        }
+        .buys_n{
+            width: 35px;
+            height: 35px;
+            background-image: url("./images/index/toolbars.png");
+            background-position: -50px 0;
+            border-radius: 5px 0 0 5px;
+            background-color: rgb(122, 110, 110);
+        }
+        .likes_n{
+            width: 35px;
+            height: 35px;
+            background-image: url("./images/index/toolbars.png");
+            background-position: -50px -50px;
+            border-radius: 5px 0 0 5px;
+            background-color: rgb(122, 110, 110);
+        }
+        .times_n{
+            width: 35px;
+            height: 35px;
+            background-image: url("./images/index/toolbars.png");
+            background-position: -50px -100px;
+            border-radius: 5px 0 0 5px;
+            background-color: rgb(122, 110, 110);
+        }
+        .mys_n{
+            width: 35px;
+            height: 35px;
+            background-image: url("./images/index/toolbars.png");
+            background-position: -190px -150px;
+            border-radius: 5px 0 0 5px;
+            background-color: rgb(122, 110, 110);
+        }
+        .talks_n{
+            width: 35px;
+            height: 35px;
+            background-image: url("./images/index/toolbars.png");
+            background-position: -50px -150px;
+            border-radius: 5px 0 0 5px;
+            background-color: rgb(122, 110, 110);
+        }
+        .ideas_n{
+            width: 35px;
+            height: 35px;
+            background-image: url("./images/index/toolbars.png");
+            background-position: -50px -300px;
+            border-radius: 5px 0 0 5px;
+            background-color: rgb(122, 110, 110);
+        }
+        .tops_n{
+            width: 35px;
+            height: 35px;
+            background-image: url("./images/index/toolbars.png");
+            background-position: -50px -250px;
+            border-radius: 5px 0 0 5px;
+            background-color: rgb(122, 110, 110);
+        }
+        .users,.buys,.likes,.times,.mys,.talks,.ideas,.tops{
+            /* display: none; */
+            width: 70px;
+            height: 35px;
+            background-color: rgb(194, 39, 52);
+            text-align: center;
+            line-height: 35px;
+            color: white;
+            border-radius: 5px 0 0 5px;
+            transition: all .5s;
+            opacity: 0;
+            
+        }
+        
+
+
+
+        
+    </style>
+</head>
+<body>
+   <div class="adv">
+       <img src="./images/index/header.jpg" alt="adv">
+        <span class="x">X</span>
+    </div>
+   <header>
+           <ul>
+                <li><span class="glyphicon glyphicon-map-marker" aria-hidden="true" style="color:rgb(238, 14, 35);"></span>北京</li>
+               <li>你好,请登录</li>
+               <li style="color:rgb(238, 14, 35);">免费注册</li>
+               <li>我的订单</li>
+               <li>我的京东 <span class="glyphicon glyphicon-menu-down"></span></li>
+               <li>京东会员</li>
+               <li>企业采购 <span class="glyphicon glyphicon-menu-down"></span></li>
+               <li>客户服务 <span class="glyphicon glyphicon-menu-down"></span></li>
+               <li>网站导航 <span class="glyphicon glyphicon-menu-down"></span></li>
+               <li>手机京东</li>
+           </ul>
+           <div class="phone_scan">
+               <img src="./images/index/scan.png" alt="二维码">
+           </div>
+   </header>
+
+   <!-- 左侧导航条 -->
+  <div class="left_nav">
+      <div class="jd_image"></div>
+      <nav>
+        <a href="">&#x3000;家用电器</a><br>
+        <a href="">&#x3000;手机/运营商/数码</a>
+        <a href="">&#x3000;电脑/办公</a>
+        <a href="">&#x3000;家居/家具/家装/厨具</a>
+        <a href="">&#x3000;男装/女装/童装/内衣</a>
+        <a href="">&#x3000;美妆/个护清洁/宠物</a>
+        <a href="">&#x3000;女鞋/箱包/钟表/珠宝</a>
+        <a href="">&#x3000;男鞋/运动/户外</a>
+        <a href="">&#x3000;房产/汽车/汽车用品</a>
+        <a href="">&#x3000;母婴/玩具乐器</a>
+        <a href="">&#x3000;食品/酒类/生鲜/特产</a>
+        <a href="">&#x3000;艺术/礼品鲜花/农资绿植</a>
+        <a href="">&#x3000;医药保健/计生情趣</a>
+        <a href="">&#x3000;图书/文娱/电子书</a>
+        <a href="">&#x3000;机票/酒店/旅游/生活</a>
+        <a href="">&#x3000;理财/众筹/白条/保险</a>
+        <a href="">&#x3000;安装/维修/清洗保养</a><br>
+        <a href="">&#x3000;工业品</a>
+      </nav>
+  </div>
+
+
+  <!-- 右侧功能栏 -->
+  <div class="nav_right">
+      <div class="n user">
+          <div class="users">京东会员</div>
+          <div class="users_n"></div>
+      </div>
+      <div class="n buy">
+          <div class="buys">购物车&#x3000;</div>
+          <div class="buys_n"></div>
+      </div>
+      <div class="n like">
+          <div class="likes">我的关注</div>
+          <div class="likes_n"></div>
+      </div>
+      <div class="n time">
+          <div class="times">我的足迹</div>
+          <div class="times_n"></div>
+      </div>
+      <div class="n my">
+          <div class="mys">我的消息</div>
+          <div class="mys_n"></div>
+      </div>
+      <div class="n talk">
+          <div class="talks">咨询JIMI</div>
+          <div class="talks_n"></div>
+      </div>
+      <div class="n idea">
+          <div class="ideas">&#x3000;反馈&#x3000;</div>
+          <div class="ideas_n"></div>
+      </div>
+      <div class="n top">
+          <div class="tops">&#x3000;顶部&#x3000;</div>
+          <div class="tops_n"></div>
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- 因为bootstrap框架是基于jquery开发的，所以，在导入js文件的时候
+    必须优先导入jquery的js文件 -->
+    <script src="bootstrap/js/jquery-3.3.1.min.js"></script>
+    <!-- 再利用script标签引入bootstrap的js文件 -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="./pa.js"></script>
+    <script>
+        // 最上方广告
+        $(".x").click(function(){
+            // $(".adv").css("display","none");
+            console.log("点击了");
+        });
+        // 右侧导航栏
+        $(".users_n").mouseover(function(){
+            $(".users").css("opacity",1);
+            $(".users_n").css("background-color","rgb(194, 39, 52)");
+            $(".users_n").css("border-radius",0);
+        }).mouseout(function(){
+            $(".users").css("opacity",0);
+            $(".users_n").css("background-color","rgb(122, 110, 110)");
+            $(".users_n").css("border-radius","5px 0 0 5px");
+        });
+
+        $(".buys_n").mouseover(function(){
+            $(".buys").css("opacity",1);
+            $(".buys_n").css("background-color","rgb(194, 39, 52)");
+            $(".buys_n").css("border-radius",0);
+        }).mouseout(function(){
+            $(".buys").css("opacity",0);
+            $(".buys_n").css("background-color","rgb(122, 110, 110)");
+            $(".buys_n").css("border-radius","5px 0 0 5px");
+        });
+
+        $(".likes_n").mouseover(function(){
+            $(".likes").css("opacity",1);
+            $(".likes_n").css("background-color","rgb(194, 39, 52)");
+            $(".likes_n").css("border-radius",0);
+        }).mouseout(function(){
+            $(".likes").css("opacity",0);
+            $(".likes_n").css("background-color","rgb(122, 110, 110)");
+            $(".likes_n").css("border-radius","5px 0 0 5px");
+        });
+
+        $(".times_n").mouseover(function(){
+            $(".times").css("opacity",1);
+            $(".times_n").css("background-color","rgb(194, 39, 52)");
+            $(".times_n").css("border-radius",0);
+        }).mouseout(function(){
+            $(".times").css("opacity",0);
+            $(".times_n").css("background-color","rgb(122, 110, 110)");
+            $(".times_n").css("border-radius","5px 0 0 5px");
+        });
+
+        $(".talks_n").mouseover(function(){
+            $(".talks").css("opacity",1);
+            $(".talks_n").css("background-color","rgb(194, 39, 52)");
+            $(".talks_n").css("border-radius",0);
+        }).mouseout(function(){
+            $(".talks").css("opacity",0);
+            $(".talks_n").css("background-color","rgb(122, 110, 110)");
+            $(".talks_n").css("border-radius","5px 0 0 5px");
+        });
+
+        $(".mys_n").mouseover(function(){
+            $(".mys").css("opacity",1);
+            $(".mys_n").css("background-color","rgb(194, 39, 52)");
+            $(".mys_n").css("border-radius",0);
+        }).mouseout(function(){
+            $(".mys").css("opacity",0);
+            $(".mys_n").css("background-color","rgb(122, 110, 110)");
+            $(".mys_n").css("border-radius","5px 0 0 5px");
+        });
+
+        $(".ideas_n").mouseover(function(){
+            $(".ideas").css("opacity",1);
+            $(".ideas_n").css("background-color","rgb(194, 39, 52)");
+            $(".ideas_n").css("border-radius",0);
+        }).mouseout(function(){
+            $(".ideas").css("opacity",0);
+            $(".ideas_n").css("background-color","rgb(122, 110, 110)");
+            $(".ideas_n").css("border-radius","5px 0 0 5px");
+        });
+
+        $(".tops_n").mouseover(function(){
+            $(".tops").css("opacity",1);
+            $(".tops_n").css("background-color","rgb(194, 39, 52)");
+            $(".tops_n").css("border-radius",0);
+        }).mouseout(function(){
+            $(".tops").css("opacity",0);
+            $(".tops_n").css("background-color","rgb(122, 110, 110)");
+            $(".tops_n").css("border-radius","5px 0 0 5px");
+        });
+    </script>
+</body>
+</html>
